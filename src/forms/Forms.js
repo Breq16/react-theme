@@ -21,11 +21,11 @@ export function FormGrid(props) {
 }
 
 export function Input(props) {
-    return <input className={`${style.input} ${props.className || ""}`} style={props.style} name={props.name} type={props.type || "text"} value={props.value} onChange={(e) => (props.onChange(e.target.value))} />
+    return <input className={`${style.input} ${props.className || ""}`} style={props.style} name={props.name} type={props.type || "text"} value={props.value} disabled={props.disabled} onChange={(e) => (props.onChange(e.target.value))} />
 }
 
 export function Dropdown(props) {
-    const options = Object.entries(props.options).map(([value, name]) => <option value={value}>{name}</option>)
+    const options = Object.entries(props.options).map(([value, name]) => <option value={value} key={value}>{name}</option>)
 
     return (
         <div className={`${style.dropdownWrapper} ${props.className || ""}`} style={props.style}>
@@ -55,9 +55,7 @@ export function ButtonGroup(props) {
 
 export function TextArea(props) {
     return (
-        <textarea className={`${style.textArea} ${props.className || ""}`} style={props.style} name={props.name} onChange={(e) => props.onChange(e.target.value)}>
-            {props.value}
-        </textarea>
+        <textarea className={`${style.textArea} ${props.className || ""}`} style={props.style} name={props.name} onChange={(e) => props.onChange(e.target.value)} value={props.value} />
     )
 }
 

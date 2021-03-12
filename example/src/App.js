@@ -69,7 +69,7 @@ const App = () => {
             <h1>Forms</h1>
             <Form>
                 <FormGrid>
-                    <LabelInput label="Test Input" value={state} onChange={setState} />
+                    <LabelInput label="Test Input" value={"DISABLED"} onChange={setState} disabled />
                     <LabelDropdown label="Droppy" value={droppy} options={defaultDroppy} onChange={setDroppy} />
                     <LabelTextArea label="Tinder Bio" value={texty} onChange={setTexty} />
                 </FormGrid>
