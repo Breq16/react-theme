@@ -205,6 +205,7 @@
 ._Tiles-module__tileContainer__3LY-G {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
@@ -282,7 +283,7 @@
   background: none;
   border: none;
   padding: 0;
-  color: white;
+  color: black;
   float: right;
   font-size: 30px;
 }
@@ -349,6 +350,31 @@
 }
 ._Navbar-module__navbarLink__1IqpR:hover {
   color: white;
+}
+._Heading-module__heading__3aFSY {
+  text-align: center;
+  background: #1BB3FF;
+  border-radius: 15px;
+  margin: 15px 0;
+  padding: 5px;
+}
+
+._Heading-module__heading__3aFSY h1 {
+  font-weight: bold;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  font-size: 48px;
+}
+@media (min-width: 992px) {
+  ._Heading-module__heading__3aFSY h1 {
+    font-size: 72px;
+  }
+}
+
+._Heading-module__heading__3aFSY p {
+  color: black;
+  font-style: italic;
+  font-size: 24px;
 }
 ._Code-module__code__21E6_ {
   padding: 15px;

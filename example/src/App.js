@@ -1,7 +1,7 @@
 import React from 'react'
 import { faKeybase } from "@fortawesome/free-brands-svg-icons"
 
-import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube, Code } from '@breq/react-theme'
+import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube, Code, Heading } from "@breq/react-theme"
 import '@breq/react-theme/dist/index.css'
 
 const links = {
@@ -51,6 +51,9 @@ const App = () => {
             <hr />
             <h1>Code</h1>
             <Code code={"import time"} language="python" />
+            <hr />
+            <h1>Heading</h1>
+            <Heading title="Heading" subtitle="This is my heading" />
         </Page>
     )
 }

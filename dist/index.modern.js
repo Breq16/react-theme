@@ -258,6 +258,14 @@ function Page(props) {
   }));
 }
 
+var styles$7 = {"heading":"_Heading-module__heading__3aFSY"};
+
+function Heading(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$7.heading
+  }, /*#__PURE__*/React.createElement("h1", null, props.title), /*#__PURE__*/React.createElement("p", null, props.subtitle));
+}
+
 function YouTube(props) {
   const containerStyle = {
     position: "relative",
@@ -284,11 +292,11 @@ function YouTube(props) {
   }));
 }
 
-var styles$7 = {"code":"_Code-module__code__21E6_","codeWrapper":"_Code-module__codeWrapper__1PwDm","copyButton":"_Code-module__copyButton__1ABUI"};
+var styles$8 = {"code":"_Code-module__code__21E6_","codeWrapper":"_Code-module__codeWrapper__1PwDm","copyButton":"_Code-module__copyButton__1ABUI"};
 
 function CopyButton(props) {
   return /*#__PURE__*/React.createElement("button", {
-    className: styles$7.copyButton,
+    className: styles$8.copyButton,
     onClick: props.onClick
   }, "Copy");
 }
@@ -299,7 +307,7 @@ function Code(props) {
   }
 
   return /*#__PURE__*/React.createElement("div", {
-    className: styles$7.codeWrapper
+    className: styles$8.codeWrapper
   }, /*#__PURE__*/React.createElement(Highlight, Object.assign({}, defaultProps, {
     code: props.code,
     language: props.language
@@ -310,7 +318,7 @@ function Code(props) {
     getLineProps,
     getTokenProps
   }) => /*#__PURE__*/React.createElement("pre", {
-    className: `${className} ${styles$7.code}`,
+    className: `${className} ${styles$8.code}`,
     style: style
   }, tokens.map((line, i) => /*#__PURE__*/React.createElement("div", getLineProps({
     line,
@@ -323,5 +331,5 @@ function Code(props) {
   }));
 }
 
-export { Badge, Badges, Code, Container, Footer, IconBadge, Navbar, Page, Slide, Slides, Tile, Tiles, YouTube };
+export { Badge, Badges, Code, Container, Footer, Heading, IconBadge, Navbar, Page, Slide, Slides, Tile, Tiles, YouTube };
 //# sourceMappingURL=index.modern.js.map

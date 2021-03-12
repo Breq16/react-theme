@@ -1,0 +1,28 @@
+@import "../color.scss";
+
+.heading {
+    text-align: center;
+    background: $heading-border;
+    border-radius: 15px;
+    margin: 15px 0;
+    padding: 5px;
+}
+
+.heading h1 {
+    font-weight: bold;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+
+    font-size: 48px;
+
+    @media (min-width: 992px) {
+        font-size: 72px;
+    }
+}
+
+.heading p {
+    color: black;
+    font-style: italic;
+    
+    font-size: 24px;
+}
