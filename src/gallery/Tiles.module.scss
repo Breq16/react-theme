@@ -1,0 +1,93 @@
+@import "../color";
+
+.media {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin desktop-only {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
+.tint {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+@mixin text {
+    position: absolute;
+    z-index: 2;
+    color: $tile-text;
+    background-color: $tile-text-background;
+    margin: 20px;
+    padding: 20px;
+}
+
+.title {
+    @include text;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.title h1, .title p {
+    color: $tile-text;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title h1 {
+    margin-bottom: 1rem;
+}
+
+.cta {
+    @include text;
+    @include desktop-only;
+    bottom: 20px;
+    right: 20px;
+}
+
+.dateinfo {
+    @include text;
+    @include desktop-only;
+    bottom: 20px;
+    left: 20px;
+}
+
+.tileInner {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+.tileLink {
+    display: block;
+    cursor: pointer;
+}
+
+.tileOuter {
+    margin: 20px;
+    flex-basis: 100%;
+}
+
+.tileContainer {
+    display: flex;
+    flex-direction: row;
+
+}
+
+@media (min-width: 768px) {
+    .tileOuter {
+        flex-basis: 50%;
+    }
+}

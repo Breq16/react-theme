@@ -1,0 +1,69 @@
+@import "../color";
+
+.media {
+    top: 0;
+    left: calc(-50vw + 50%);
+    width: 100vw;
+    height: 100%;
+}
+
+.title {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+    width: 70%;
+}
+
+.title h1, .title p {
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title h1 {
+    margin-bottom: 1rem;
+}
+
+.slideInner {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.slideLink {
+    display: block;
+}
+
+.slideOuter {
+    position: relative;
+    height: 100vh;
+
+    z-index: 0;
+}
+
+.slides {
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .title h1 {
+        font-size: 72px;
+    }
+
+    .title p {
+        font-size: 30px;
+    }
+
+    .slides h1 {
+        font-size: 60px;
+    }
+
+    .slides p {
+        font-size: 30px;
+    }
+}
