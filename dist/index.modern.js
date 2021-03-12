@@ -345,12 +345,13 @@ function Form(props) {
 }
 function FormGrid(props) {
   return /*#__PURE__*/React.createElement("div", {
-    className: style.formGrid
+    className: `${style.formGrid} ${props.className || ""}`
   }, props.children);
 }
 function Input(props) {
   return /*#__PURE__*/React.createElement("input", {
-    className: style.input,
+    className: `${style.input} ${props.className || ""}`,
+    style: props.style,
     name: props.name,
     type: props.type || "text",
     value: props.value,
@@ -362,7 +363,8 @@ function Dropdown(props) {
     value: value
   }, name));
   return /*#__PURE__*/React.createElement("div", {
-    className: style.dropdownWrapper
+    className: `${style.dropdownWrapper} ${props.className || ""}`,
+    style: props.style
   }, /*#__PURE__*/React.createElement("select", {
     className: style.dropdown,
     name: props.name,
@@ -376,25 +378,29 @@ function Dropdown(props) {
 }
 function Button(props) {
   return /*#__PURE__*/React.createElement("button", {
-    className: style.button,
+    className: `${style.button} ${props.className || ""}`,
+    style: props.style,
     onClick: props.onClick
   }, props.children);
 }
 function ButtonGroup(props) {
   return /*#__PURE__*/React.createElement("div", {
-    className: style.buttonGroup
+    className: `${style.buttonGroup} ${props.className || ""}`,
+    style: props.style
   }, props.children);
 }
 function TextArea(props) {
   return /*#__PURE__*/React.createElement("textarea", {
-    className: style.textArea,
+    className: `${style.textArea} ${props.className || ""}`,
+    style: props.style,
     name: props.name,
     onChange: e => props.onChange(e.target.value)
   }, props.value);
 }
 function wrapLabel(Component) {
   return props => /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("label", {
-    className: style.label
+    className: `${style.label} ${props.className || ""}`,
+    style: props.style
   }, props.label), /*#__PURE__*/React.createElement(Component, props));
 }
 const LabelInput = wrapLabel(Input);

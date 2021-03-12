@@ -14,21 +14,21 @@ export function Form(props) {
 
 export function FormGrid(props) {
     return (
-        <div className={style.formGrid}>
+        <div className={`${style.formGrid} ${props.className || ""}`}>
             {props.children}
         </div>
     )
 }
 
 export function Input(props) {
-    return <input className={style.input} name={props.name} type={props.type || "text"} value={props.value} onChange={(e) => (props.onChange(e.target.value))} />
+    return <input className={`${style.input} ${props.className || ""}`} style={props.style} name={props.name} type={props.type || "text"} value={props.value} onChange={(e) => (props.onChange(e.target.value))} />
 }
 
 export function Dropdown(props) {
     const options = Object.entries(props.options).map(([value, name]) => <option value={value}>{name}</option>)
 
     return (
-        <div className={style.dropdownWrapper}>
+        <div className={`${style.dropdownWrapper} ${props.className || ""}`} style={props.style}>
             <select className={style.dropdown} name={props.name} value={props.value} onChange={(e) => (props.onChange(e.target.value))}>
                 {options}
             </select>
@@ -41,13 +41,13 @@ export function Dropdown(props) {
 
 export function Button(props) {
     return (
-        <button className={style.button} onClick={props.onClick}>{props.children}</button>
+        <button className={`${style.button} ${props.className || ""}`} style={props.style} onClick={props.onClick}>{props.children}</button>
     )
 }
 
 export function ButtonGroup(props) {
     return (
-        <div className={style.buttonGroup}>
+        <div className={`${style.buttonGroup} ${props.className || ""}`} style={props.style}>
             {props.children}
         </div>
     )
@@ -55,7 +55,7 @@ export function ButtonGroup(props) {
 
 export function TextArea(props) {
     return (
-        <textarea className={style.textArea} name={props.name} onChange={(e) => props.onChange(e.target.value)}>
+        <textarea className={`${style.textArea} ${props.className || ""}`} style={props.style} name={props.name} onChange={(e) => props.onChange(e.target.value)}>
             {props.value}
         </textarea>
     )
@@ -64,7 +64,7 @@ export function TextArea(props) {
 export function wrapLabel(Component) {
     return (props) => (
         <>
-            <label className={style.label}>{props.label}</label>
+            <label className={`${style.label} ${props.className || ""}`} style={props.style}>{props.label}</label>
             <Component {...props} />
         </>
     )
