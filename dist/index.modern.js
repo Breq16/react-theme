@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight, faCalendarAlt, faHeart, faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
@@ -286,9 +286,9 @@ function YouTube(props) {
   }, /*#__PURE__*/React.createElement("iframe", {
     style: iframeStyle,
     src: `https://www.youtube.com/embed/${props.id}?rel=0`,
-    frameborder: "0",
+    frameBorder: "0",
     allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-    allowfullscreen: true
+    allowFullScreen: true
   }));
 }
 
@@ -331,5 +331,39 @@ function Code(props) {
   }));
 }
 
-export { Badge, Badges, Code, Container, Footer, Heading, IconBadge, Navbar, Page, Slide, Slides, Tile, Tiles, YouTube };
+var style = {"form":"_Forms-module__form__Fpmov","label":"_Forms-module__label__1aVFs","input":"_Forms-module__input__3did1","dropdown":"_Forms-module__dropdown__3dpKe"};
+
+function Form(props) {
+  return /*#__PURE__*/React.createElement("form", {
+    className: style.form,
+    onSubmit: props.onSubmit || (() => {}),
+    onChange: props.onChange || (() => {})
+  }, props.children);
+}
+function Input(props) {
+  return /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("label", {
+    className: style.label
+  }, props.label), /*#__PURE__*/React.createElement("input", {
+    className: style.input,
+    name: props.name,
+    type: props.type || "text",
+    value: props.value,
+    onChange: props.onChange
+  }));
+}
+function Dropdown(props) {
+  const options = Object.entries(props.options).map(([value, name]) => /*#__PURE__*/React.createElement("option", {
+    value: value
+  }, name));
+  return /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("label", {
+    className: style.label
+  }, props.label), /*#__PURE__*/React.createElement("select", {
+    className: style.dropdown,
+    name: props.name,
+    value: props.value,
+    onChange: props.onChange
+  }, options));
+}
+
+export { Badge, Badges, Code, Container, Dropdown, Footer, Form, Heading, IconBadge, Input, Navbar, Page, Slide, Slides, Tile, Tiles, YouTube };
 //# sourceMappingURL=index.modern.js.map

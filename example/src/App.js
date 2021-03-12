@@ -1,7 +1,7 @@
 import React from 'react'
 import { faKeybase } from "@fortawesome/free-brands-svg-icons"
 
-import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube, Code, Heading } from "@breq/react-theme"
+import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube, Code, Heading, Input, Form, Dropdown } from "@breq/react-theme"
 import '@breq/react-theme/dist/index.css'
 
 const links = {
@@ -17,6 +17,16 @@ const contact = [
 ]
 
 const App = () => {
+
+    const [state, setState] = React.useState("")
+    const [droppy, setDroppy] = React.useState("hello")
+
+    const defaultDroppy = {
+        hello: "Hello!",
+        world: "World!"
+    }
+
+
     return (
         <Page brand="@breq/react-theme" links={links} contact={contact} author="breq" copyright="2021" repo="Breq16/react-theme">
             <h1>Hello World!</h1>
@@ -54,6 +64,12 @@ const App = () => {
             <hr />
             <h1>Heading</h1>
             <Heading title="Heading" subtitle="This is my heading" />
+            <hr />
+            <h1>Forms</h1>
+            <Form>
+                <Input label="Test Input" value={state} onChange={(e) => setState(e.target.value)} />
+                <Dropdown label="Droppy" value={droppy} options={defaultDroppy} onChange={(e) => setDroppy(e.target.value)} />
+            </Form>
         </Page>
     )
 }

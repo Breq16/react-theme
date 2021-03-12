@@ -1,0 +1,28 @@
+@import "../color";
+
+.form {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 15px 0;
+    display: inline-grid;
+    grid-template-columns: max-content auto;
+}
+
+.label {
+    margin: 0.2em 0.5em;
+    align-self: center;
+}
+
+@mixin formElement {
+    margin: 0.2em 0.5em;
+    align-self: center;
+}
+
+.input {
+    @include formElement;
+}
+
+.dropdown {
+    @include formElement;
+}

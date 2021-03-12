@@ -8,6 +8,7 @@ export { default as Page } from "./layout/Page"
 export { default as Heading } from "./layout/Heading"
 export { default as YouTube } from "./misc/YouTube"
 export { default as Code } from "./misc/Code"
+export * from "./forms/Forms"
 
 import "normalize.css"
 import "./index.scss"

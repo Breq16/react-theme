@@ -405,6 +405,30 @@
   display: block;
   background: gray;
 }
+._Forms-module__form__Fpmov {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px 0;
+  display: inline-grid;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+
+._Forms-module__label__1aVFs {
+  margin: 0.2em 0.5em;
+  align-self: center;
+}
+
+._Forms-module__input__3did1 {
+  margin: 0.2em 0.5em;
+  align-self: center;
+}
+
+._Forms-module__dropdown__3dpKe {
+  margin: 0.2em 0.5em;
+  align-self: center;
+}
 @import url("https://fonts.googleapis.com/css2?family=Lato&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&amp;display=swap");
 body {
