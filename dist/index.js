@@ -10,7 +10,7 @@ var Highlight = require('prism-react-renderer');
 var Highlight__default = _interopDefault(Highlight);
 require('normalize.css');
 
-var styles = {"badge":"_2YqXz","badgeIcon":"_OmwvH","badges":"_Qjjav"};
+var styles = {"badge":"_Badges-module__badge__2YqXz","badgeIcon":"_Badges-module__badgeIcon__OmwvH","badges":"_Badges-module__badges__Qjjav"};
 
 function Badge(props) {
   return /*#__PURE__*/React__default.createElement("div", {
@@ -34,9 +34,9 @@ function Badges(props) {
   }, props.children);
 }
 
-var styles$1 = {"media":"_1G3qN","title":"_22tKy","slideInner":"_K1QHb","slideLink":"_1j8iQ","slideOuter":"_2jb_c","slides":"_2Dg4F"};
+var styles$1 = {"media":"_Slides-module__media__1G3qN","title":"_Slides-module__title__22tKy","slideInner":"_Slides-module__slideInner__K1QHb","slideLink":"_Slides-module__slideLink__1j8iQ","slideOuter":"_Slides-module__slideOuter__2jb_c","slides":"_Slides-module__slides__2Dg4F"};
 
-var styles$2 = {"video":"_1MhMm","image":"_TxIhu","tint":"_wKEen"};
+var styles$2 = {"video":"_Media-module__video__1MhMm","image":"_Media-module__image__TxIhu","tint":"_Media-module__tint__wKEen"};
 
 var Video = function Video(props) {
   return /*#__PURE__*/React__default.createElement("video", {
@@ -122,7 +122,7 @@ function Slides(props) {
   }, props.children);
 }
 
-var styles$3 = {"media":"_2BYob","tint":"_1JcaT","title":"_3tbqJ","cta":"_1QEs0","dateinfo":"_eXZtZ","tileInner":"_ND4H_","tileLink":"_20UsT","tileOuter":"_37b4W","tileContainer":"_3LY-G"};
+var styles$3 = {"media":"_Tiles-module__media__2BYob","tint":"_Tiles-module__tint__1JcaT","title":"_Tiles-module__title__3tbqJ","cta":"_Tiles-module__cta__1QEs0","dateinfo":"_Tiles-module__dateinfo__eXZtZ","tileInner":"_Tiles-module__tileInner__ND4H_","tileLink":"_Tiles-module__tileLink__20UsT","tileOuter":"_Tiles-module__tileOuter__37b4W","tileContainer":"_Tiles-module__tileContainer__3LY-G"};
 
 function Title$1(props) {
   return /*#__PURE__*/React__default.createElement("div", {
@@ -175,7 +175,7 @@ function Tiles(props) {
   }, props.children);
 }
 
-var styles$4 = {"container":"_3MUlz"};
+var styles$4 = {"container":"_Container-module__container__3MUlz"};
 
 function Container(props) {
   return /*#__PURE__*/React__default.createElement("div", {
@@ -184,7 +184,7 @@ function Container(props) {
   }, props.children);
 }
 
-var styles$5 = {"footer":"_19yAG","contactList":"_2H7C0"};
+var styles$5 = {"footer":"_Footer-module__footer__19yAG","contactList":"_Footer-module__contactList__2H7C0"};
 
 var ContactLink = function ContactLink(props) {
   return /*#__PURE__*/React__default.createElement("span", {
@@ -221,7 +221,7 @@ function Footer(props) {
   }, contact), /*#__PURE__*/React__default.createElement("br", null), /*#__PURE__*/React__default.createElement("br", null)));
 }
 
-var styles$6 = {"navbarOuter":"_1oeE6","navbarInner":"_3YlKD","navbarToggle":"_1hZG2","navbarLinks":"_28Q7e","collapsed":"_wWJAB","navbarBrand":"_1Es7q","navbarLink":"_1IqpR","navbarIcon":"_3I3Uo"};
+var styles$6 = {"navbarOuter":"_Navbar-module__navbarOuter__1oeE6","navbarInner":"_Navbar-module__navbarInner__3YlKD","navbarToggle":"_Navbar-module__navbarToggle__1hZG2","navbarLinks":"_Navbar-module__navbarLinks__28Q7e","collapsed":"_Navbar-module__collapsed__wWJAB","navbarBrand":"_Navbar-module__navbarBrand__1Es7q","navbarLink":"_Navbar-module__navbarLink__1IqpR","navbarIcon":"_Navbar-module__navbarIcon__3I3Uo"};
 
 function Navbar(props) {
   var _React$useState = React__default.useState(false),
@@ -284,7 +284,7 @@ function Page(props) {
   }));
 }
 
-var styles$7 = {"heading":"_3aFSY"};
+var styles$7 = {"heading":"_Heading-module__heading__3aFSY"};
 
 function Heading(props) {
   return /*#__PURE__*/React__default.createElement("div", {
@@ -336,7 +336,7 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-var styles$8 = {"code":"_21E6_","codeWrapper":"_1PwDm","copyButton":"_1ABUI"};
+var styles$8 = {"code":"_Code-module__code__21E6_","codeWrapper":"_Code-module__codeWrapper__1PwDm","copyButton":"_Code-module__copyButton__1ABUI"};
 
 function CopyButton(props) {
   return /*#__PURE__*/React__default.createElement("button", {
@@ -380,25 +380,33 @@ function Code(props) {
   }));
 }
 
-var style = {"form":"_Fpmov","label":"_1aVFs","input":"_3did1","dropdown":"_3dpKe"};
+var style = {"form":"_Forms-module__form__Fpmov","formGrid":"_Forms-module__formGrid__201dH","label":"_Forms-module__label__1aVFs","input":"_Forms-module__input__3did1","dropdownWrapper":"_Forms-module__dropdownWrapper__19WHW","dropdown":"_Forms-module__dropdown__3dpKe","dropdownIcon":"_Forms-module__dropdownIcon__3nglQ","textArea":"_Forms-module__textArea__H3hRd","button":"_Forms-module__button__2nXpX","buttonGroup":"_Forms-module__buttonGroup__1o9Xo"};
 
 function Form(props) {
   return /*#__PURE__*/React__default.createElement("form", {
-    className: style.form,
-    onSubmit: props.onSubmit || function () {},
+    className: style.form + " " + (props.className || ""),
+    style: props.style,
+    onSubmit: props.onSubmit || function (e) {
+      e.preventDefault();
+    },
     onChange: props.onChange || function () {}
   }, props.children);
 }
+function FormGrid(props) {
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: style.formGrid
+  }, props.children);
+}
 function Input(props) {
-  return /*#__PURE__*/React__default.createElement(React.Fragment, null, /*#__PURE__*/React__default.createElement("label", {
-    className: style.label
-  }, props.label), /*#__PURE__*/React__default.createElement("input", {
+  return /*#__PURE__*/React__default.createElement("input", {
     className: style.input,
     name: props.name,
     type: props.type || "text",
     value: props.value,
-    onChange: props.onChange
-  }));
+    onChange: function onChange(e) {
+      return props.onChange(e.target.value);
+    }
+  });
 }
 function Dropdown(props) {
   var options = Object.entries(props.options).map(function (_ref) {
@@ -408,31 +416,75 @@ function Dropdown(props) {
       value: value
     }, name);
   });
-  return /*#__PURE__*/React__default.createElement(React.Fragment, null, /*#__PURE__*/React__default.createElement("label", {
-    className: style.label
-  }, props.label), /*#__PURE__*/React__default.createElement("select", {
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: style.dropdownWrapper
+  }, /*#__PURE__*/React__default.createElement("select", {
     className: style.dropdown,
     name: props.name,
     value: props.value,
-    onChange: props.onChange
-  }, options));
+    onChange: function onChange(e) {
+      return props.onChange(e.target.value);
+    }
+  }, options), /*#__PURE__*/React__default.createElement("div", {
+    className: style.dropdownIcon
+  }, /*#__PURE__*/React__default.createElement(reactFontawesome.FontAwesomeIcon, {
+    icon: freeSolidSvgIcons.faChevronDown
+  })));
 }
+function Button(props) {
+  return /*#__PURE__*/React__default.createElement("button", {
+    className: style.button,
+    onClick: props.onClick
+  }, props.children);
+}
+function ButtonGroup(props) {
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: style.buttonGroup
+  }, props.children);
+}
+function TextArea(props) {
+  return /*#__PURE__*/React__default.createElement("textarea", {
+    className: style.textArea,
+    name: props.name,
+    onChange: function onChange(e) {
+      return props.onChange(e.target.value);
+    }
+  }, props.value);
+}
+function wrapLabel(Component) {
+  return function (props) {
+    return /*#__PURE__*/React__default.createElement(React.Fragment, null, /*#__PURE__*/React__default.createElement("label", {
+      className: style.label
+    }, props.label), /*#__PURE__*/React__default.createElement(Component, props));
+  };
+}
+var LabelInput = wrapLabel(Input);
+var LabelDropdown = wrapLabel(Dropdown);
+var LabelTextArea = wrapLabel(TextArea);
 
 exports.Badge = Badge;
 exports.Badges = Badges;
+exports.Button = Button;
+exports.ButtonGroup = ButtonGroup;
 exports.Code = Code;
 exports.Container = Container;
 exports.Dropdown = Dropdown;
 exports.Footer = Footer;
 exports.Form = Form;
+exports.FormGrid = FormGrid;
 exports.Heading = Heading;
 exports.IconBadge = IconBadge;
 exports.Input = Input;
+exports.LabelDropdown = LabelDropdown;
+exports.LabelInput = LabelInput;
+exports.LabelTextArea = LabelTextArea;
 exports.Navbar = Navbar;
 exports.Page = Page;
 exports.Slide = Slide;
 exports.Slides = Slides;
+exports.TextArea = TextArea;
 exports.Tile = Tile;
 exports.Tiles = Tiles;
 exports.YouTube = YouTube;
+exports.wrapLabel = wrapLabel;
 //# sourceMappingURL=index.js.map

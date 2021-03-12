@@ -3,26 +3,85 @@
 .form {
     border: 2px solid black;
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px;
     margin: 15px 0;
+}
+
+.formGrid {
     display: inline-grid;
     grid-template-columns: max-content auto;
 }
 
 .label {
-    margin: 0.2em 0.5em;
-    align-self: center;
+    margin: 0.5em;
+    margin-top: 0.9em;
+    align-self: start;
 }
 
 @mixin formElement {
-    margin: 0.2em 0.5em;
+    margin: 0.5em 0;
+    padding: 0.3em;
     align-self: center;
+    box-sizing: border-box;
+
+    border: 2px solid #eee;
+    border-radius: 0.5em;
+
+    background: white;
+
+    font: inherit;
 }
 
 .input {
     @include formElement;
 }
 
-.dropdown {
+.dropdownWrapper {
     @include formElement;
+    position: relative;
+    padding: 0;
+}
+
+.dropdown {
+    margin: 0;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    appearance: none;
+    border: none;
+    background: inherit;
+    width: 100%;
+}
+
+.dropdownIcon {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    z-index: 1;
+    pointer-events: none;
+    content: "V";
+}
+
+.textArea {
+    @include formElement;
+    resize: vertical;
+}
+
+.button {
+    @include formElement;
+
+    cursor: pointer;
+    background-color: $button;
+    transition: background-color 0.2s;
+
+    padding: 0.5em;
+    margin: 0.2em;
+
+    &:active, &:hover {
+        background-color: $button-hover;
+    }
+}
+
+.buttonGroup {
+    text-align: center;
+    margin-bottom: 10px;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { faKeybase } from "@fortawesome/free-brands-svg-icons"
 
-import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube, Code, Heading, Input, Form, Dropdown } from "@breq/react-theme"
+import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube, Code, Heading, LabelInput, Form, LabelDropdown, Button, FormGrid, LabelTextArea } from "@breq/react-theme"
 import '@breq/react-theme/dist/index.css'
 
 const links = {
@@ -20,6 +20,7 @@ const App = () => {
 
     const [state, setState] = React.useState("")
     const [droppy, setDroppy] = React.useState("hello")
+    const [texty, setTexty] = React.useState("Hi\nmultiline!")
 
     const defaultDroppy = {
         hello: "Hello!",
@@ -67,8 +68,15 @@ const App = () => {
             <hr />
             <h1>Forms</h1>
             <Form>
-                <Input label="Test Input" value={state} onChange={(e) => setState(e.target.value)} />
-                <Dropdown label="Droppy" value={droppy} options={defaultDroppy} onChange={(e) => setDroppy(e.target.value)} />
+                <FormGrid>
+                    <LabelInput label="Test Input" value={state} onChange={setState} />
+                    <LabelDropdown label="Droppy" value={droppy} options={defaultDroppy} onChange={setDroppy} />
+                    <LabelTextArea label="Tinder Bio" value={texty} onChange={setTexty} />
+                </FormGrid>
+                <br />
+                <Button onClick={alert}>Haii!</Button>
+                <Button onClick={alert}>Sup?</Button>
+                <br />
             </Form>
         </Page>
     )
