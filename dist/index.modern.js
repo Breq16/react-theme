@@ -6,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import 'normalize.css';
 
-var styles = {"badge":"_Badges-module__badge__2YqXz","badgeIcon":"_Badges-module__badgeIcon__OmwvH","badges":"_Badges-module__badges__Qjjav"};
+var styles = {"badge":"_2YqXz","badgeIcon":"_OmwvH","badges":"_Qjjav"};
 
 function Badge(props) {
   return /*#__PURE__*/React.createElement("div", {
@@ -30,36 +30,42 @@ function Badges(props) {
   }, props.children);
 }
 
-var styles$1 = {"media":"_Slides-module__media__1G3qN","title":"_Slides-module__title__22tKy","slideInner":"_Slides-module__slideInner__K1QHb","slideLink":"_Slides-module__slideLink__1j8iQ","slideOuter":"_Slides-module__slideOuter__2jb_c","slides":"_Slides-module__slides__2Dg4F"};
+var styles$1 = {"media":"_1G3qN","title":"_22tKy","slideInner":"_K1QHb","slideLink":"_1j8iQ","slideOuter":"_2jb_c","slides":"_2Dg4F"};
 
-var styles$2 = {"video":"_Media-module__video__1MhMm","image":"_Media-module__image__TxIhu","tint":"_Media-module__tint__wKEen"};
+var styles$2 = {"video":"_1MhMm","image":"_TxIhu","tint":"_wKEen"};
 
-const Video = props => /*#__PURE__*/React.createElement("video", {
-  className: `${styles$2.video} ${props.className || ""}`,
-  playsInline: true,
-  autoPlay: true,
-  muted: true,
-  loop: true,
-  disablePictureInPicture: true
-}, /*#__PURE__*/React.createElement("source", {
-  src: props.src,
-  type: "video/webm"
-}));
+var Video = function Video(props) {
+  return /*#__PURE__*/React.createElement("video", {
+    className: styles$2.video + " " + (props.className || ""),
+    playsInline: true,
+    autoPlay: true,
+    muted: true,
+    loop: true,
+    disablePictureInPicture: true
+  }, /*#__PURE__*/React.createElement("source", {
+    src: props.src,
+    type: "video/webm"
+  }));
+};
 
-const Image = props => /*#__PURE__*/React.createElement("div", {
-  className: `${styles$2.image} ${props.className || ""}`
-}, /*#__PURE__*/React.createElement("img", {
-  src: props.src,
-  alt: "",
-  loading: "lazy"
-}));
+var Image = function Image(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$2.image + " " + (props.className || "")
+  }, /*#__PURE__*/React.createElement("img", {
+    src: props.src,
+    alt: "",
+    loading: "lazy"
+  }));
+};
 
-const Tint = props => /*#__PURE__*/React.createElement("div", {
-  className: styles$2.tint,
-  style: {
-    backgroundColor: props.color
-  }
-});
+var Tint = function Tint(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$2.tint,
+    style: {
+      backgroundColor: props.color
+    }
+  });
+};
 
 function Media(props) {
   if (props.video) {
@@ -112,7 +118,7 @@ function Slides(props) {
   }, props.children);
 }
 
-var styles$3 = {"media":"_Tiles-module__media__2BYob","tint":"_Tiles-module__tint__1JcaT","title":"_Tiles-module__title__3tbqJ","cta":"_Tiles-module__cta__1QEs0","dateinfo":"_Tiles-module__dateinfo__eXZtZ","tileInner":"_Tiles-module__tileInner__ND4H_","tileLink":"_Tiles-module__tileLink__20UsT","tileOuter":"_Tiles-module__tileOuter__37b4W","tileContainer":"_Tiles-module__tileContainer__3LY-G"};
+var styles$3 = {"media":"_2BYob","tint":"_1JcaT","title":"_3tbqJ","cta":"_1QEs0","dateinfo":"_eXZtZ","tileInner":"_ND4H_","tileLink":"_20UsT","tileOuter":"_37b4W","tileContainer":"_3LY-G"};
 
 function Title$1(props) {
   return /*#__PURE__*/React.createElement("div", {
@@ -120,17 +126,21 @@ function Title$1(props) {
   }, /*#__PURE__*/React.createElement("h1", null, props.title), /*#__PURE__*/React.createElement("p", null, props.subtitle));
 }
 
-const Cta = props => /*#__PURE__*/React.createElement("div", {
-  className: styles$3.cta
-}, /*#__PURE__*/React.createElement("span", null, props.cta), "\xA0\xA0", /*#__PURE__*/React.createElement(FontAwesomeIcon, {
-  icon: faAngleDoubleRight
-}));
+var Cta = function Cta(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$3.cta
+  }, /*#__PURE__*/React.createElement("span", null, props.cta), "\xA0\xA0", /*#__PURE__*/React.createElement(FontAwesomeIcon, {
+    icon: faAngleDoubleRight
+  }));
+};
 
-const DateInfo = props => /*#__PURE__*/React.createElement("div", {
-  className: styles$3.dateinfo
-}, /*#__PURE__*/React.createElement(FontAwesomeIcon, {
-  icon: faCalendarAlt
-}), "\xA0\xA0", /*#__PURE__*/React.createElement("span", null, props.date));
+var DateInfo = function DateInfo(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$3.dateinfo
+  }, /*#__PURE__*/React.createElement(FontAwesomeIcon, {
+    icon: faCalendarAlt
+  }), "\xA0\xA0", /*#__PURE__*/React.createElement("span", null, props.date));
+};
 
 function Tile(props) {
   return /*#__PURE__*/React.createElement("div", {
@@ -161,7 +171,7 @@ function Tiles(props) {
   }, props.children);
 }
 
-var styles$4 = {"container":"_Container-module__container__3MUlz"};
+var styles$4 = {"container":"_3MUlz"};
 
 function Container(props) {
   return /*#__PURE__*/React.createElement("div", {
@@ -170,25 +180,29 @@ function Container(props) {
   }, props.children);
 }
 
-var styles$5 = {"footer":"_Footer-module__footer__19yAG","contactList":"_Footer-module__contactList__2H7C0"};
+var styles$5 = {"footer":"_19yAG","contactList":"_2H7C0"};
 
-const ContactLink = props => /*#__PURE__*/React.createElement("span", {
-  className: styles$5.contactLink
-}, /*#__PURE__*/React.createElement(FontAwesomeIcon, {
-  icon: props.icon
-}), "\xA0", /*#__PURE__*/React.createElement("a", {
-  href: props.link,
-  target: "_blank",
-  rel: "noreferrer"
-}, props.children));
+var ContactLink = function ContactLink(props) {
+  return /*#__PURE__*/React.createElement("span", {
+    className: styles$5.contactLink
+  }, /*#__PURE__*/React.createElement(FontAwesomeIcon, {
+    icon: props.icon
+  }), "\xA0", /*#__PURE__*/React.createElement("a", {
+    href: props.link,
+    target: "_blank",
+    rel: "noreferrer"
+  }, props.children));
+};
 
 function Footer(props) {
-  const contact = props.contact.map(link => /*#__PURE__*/React.createElement("li", {
-    key: link.text
-  }, /*#__PURE__*/React.createElement(ContactLink, {
-    icon: link.icon,
-    link: link.link
-  }, link.text)));
+  var contact = props.contact.map(function (link) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: link.text
+    }, /*#__PURE__*/React.createElement(ContactLink, {
+      icon: link.icon,
+      link: link.link
+    }, link.text));
+  });
   return /*#__PURE__*/React.createElement("footer", {
     className: styles$5.footer
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("p", null, "made with ", /*#__PURE__*/React.createElement(FontAwesomeIcon, {
@@ -197,28 +211,36 @@ function Footer(props) {
     icon: faCopyright
   }, props.copyright, ","), /*#__PURE__*/React.createElement("span", null, " "), /*#__PURE__*/React.createElement(ContactLink, {
     icon: faGithub,
-    link: `https://github.com/${props.repo}`
+    link: "https://github.com/" + props.repo
   }, props.repo)), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("ul", {
     className: styles$5.contactList
   }, contact), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null)));
 }
 
-var styles$6 = {"navbarOuter":"_Navbar-module__navbarOuter__1oeE6","navbarInner":"_Navbar-module__navbarInner__3YlKD","navbarToggle":"_Navbar-module__navbarToggle__1hZG2","navbarLinks":"_Navbar-module__navbarLinks__28Q7e","collapsed":"_Navbar-module__collapsed__wWJAB","navbarBrand":"_Navbar-module__navbarBrand__1Es7q","navbarLink":"_Navbar-module__navbarLink__1IqpR","navbarIcon":"_Navbar-module__navbarIcon__3I3Uo"};
+var styles$6 = {"navbarOuter":"_1oeE6","navbarInner":"_3YlKD","navbarToggle":"_1hZG2","navbarLinks":"_28Q7e","collapsed":"_wWJAB","navbarBrand":"_1Es7q","navbarLink":"_1IqpR","navbarIcon":"_3I3Uo"};
 
 function Navbar(props) {
-  const [open, setOpen] = React.useState(false);
+  var _React$useState = React.useState(false),
+      open = _React$useState[0],
+      setOpen = _React$useState[1];
 
-  const handleToggle = () => setOpen(!open);
+  var handleToggle = function handleToggle() {
+    return setOpen(!open);
+  };
 
-  const links = Object.entries(props.links).map(([name, href]) => /*#__PURE__*/React.createElement("a", {
-    href: href,
-    key: name,
-    className: styles$6.navbarLink
-  }, /*#__PURE__*/React.createElement(FontAwesomeIcon, {
-    className: styles$6.navbarIcon,
-    icon: faAngleDoubleRight
-  }), name));
-  const navLinksClassName = styles$6.navbarLinks + " " + (open ? "" : styles$6.collapsed);
+  var links = Object.entries(props.links).map(function (_ref) {
+    var name = _ref[0],
+        href = _ref[1];
+    return /*#__PURE__*/React.createElement("a", {
+      href: href,
+      key: name,
+      className: styles$6.navbarLink
+    }, /*#__PURE__*/React.createElement(FontAwesomeIcon, {
+      className: styles$6.navbarIcon,
+      icon: faAngleDoubleRight
+    }), name);
+  });
+  var navLinksClassName = styles$6.navbarLinks + " " + (open ? "" : styles$6.collapsed);
   return /*#__PURE__*/React.createElement("div", {
     className: styles$6.navbarOuter
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("nav", {
@@ -236,7 +258,7 @@ function Navbar(props) {
 }
 
 function Page(props) {
-  const pageStyle = {
+  var pageStyle = {
     height: "100vh",
     display: "flex",
     flexDirection: "column"
@@ -258,7 +280,7 @@ function Page(props) {
   }));
 }
 
-var styles$7 = {"heading":"_Heading-module__heading__3aFSY"};
+var styles$7 = {"heading":"_3aFSY"};
 
 function Heading(props) {
   return /*#__PURE__*/React.createElement("div", {
@@ -267,14 +289,14 @@ function Heading(props) {
 }
 
 function YouTube(props) {
-  const containerStyle = {
+  var containerStyle = {
     position: "relative",
     paddingBottom: "56.25%",
     paddingTop: "25px",
     height: 0,
     marginBottom: "20px"
   };
-  const iframeStyle = {
+  var iframeStyle = {
     position: "absolute",
     top: 0,
     left: 0,
@@ -285,14 +307,32 @@ function YouTube(props) {
     style: containerStyle
   }, /*#__PURE__*/React.createElement("iframe", {
     style: iframeStyle,
-    src: `https://www.youtube.com/embed/${props.id}?rel=0`,
+    src: "https://www.youtube.com/embed/" + props.id + "?rel=0",
     frameBorder: "0",
     allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
     allowFullScreen: true
   }));
 }
 
-var styles$8 = {"code":"_Code-module__code__21E6_","codeWrapper":"_Code-module__codeWrapper__1PwDm","copyButton":"_Code-module__copyButton__1ABUI"};
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+var styles$8 = {"code":"_21E6_","codeWrapper":"_1PwDm","copyButton":"_1ABUI"};
 
 function CopyButton(props) {
   return /*#__PURE__*/React.createElement("button", {
@@ -308,36 +348,41 @@ function Code(props) {
 
   return /*#__PURE__*/React.createElement("div", {
     className: styles$8.codeWrapper
-  }, /*#__PURE__*/React.createElement(Highlight, Object.assign({}, defaultProps, {
+  }, /*#__PURE__*/React.createElement(Highlight, _extends({}, defaultProps, {
     code: props.code,
     language: props.language
-  }), ({
-    className,
-    style,
-    tokens,
-    getLineProps,
-    getTokenProps
-  }) => /*#__PURE__*/React.createElement("pre", {
-    className: `${className} ${styles$8.code}`,
-    style: style
-  }, tokens.map((line, i) => /*#__PURE__*/React.createElement("div", getLineProps({
-    line,
-    key: i
-  }), line.map((token, key) => /*#__PURE__*/React.createElement("span", getTokenProps({
-    token,
-    key
-  }))))))), /*#__PURE__*/React.createElement(CopyButton, {
+  }), function (_ref) {
+    var className = _ref.className,
+        style = _ref.style,
+        tokens = _ref.tokens,
+        getLineProps = _ref.getLineProps,
+        getTokenProps = _ref.getTokenProps;
+    return /*#__PURE__*/React.createElement("pre", {
+      className: className + " " + styles$8.code,
+      style: style
+    }, tokens.map(function (line, i) {
+      return /*#__PURE__*/React.createElement("div", getLineProps({
+        line: line,
+        key: i
+      }), line.map(function (token, key) {
+        return /*#__PURE__*/React.createElement("span", getTokenProps({
+          token: token,
+          key: key
+        }));
+      }));
+    }));
+  }), /*#__PURE__*/React.createElement(CopyButton, {
     onClick: handleCopy
   }));
 }
 
-var style = {"form":"_Forms-module__form__Fpmov","label":"_Forms-module__label__1aVFs","input":"_Forms-module__input__3did1","dropdown":"_Forms-module__dropdown__3dpKe"};
+var style = {"form":"_Fpmov","label":"_1aVFs","input":"_3did1","dropdown":"_3dpKe"};
 
 function Form(props) {
   return /*#__PURE__*/React.createElement("form", {
     className: style.form,
-    onSubmit: props.onSubmit || (() => {}),
-    onChange: props.onChange || (() => {})
+    onSubmit: props.onSubmit || function () {},
+    onChange: props.onChange || function () {}
   }, props.children);
 }
 function Input(props) {
@@ -352,9 +397,13 @@ function Input(props) {
   }));
 }
 function Dropdown(props) {
-  const options = Object.entries(props.options).map(([value, name]) => /*#__PURE__*/React.createElement("option", {
-    value: value
-  }, name));
+  var options = Object.entries(props.options).map(function (_ref) {
+    var value = _ref[0],
+        name = _ref[1];
+    return /*#__PURE__*/React.createElement("option", {
+      value: value
+    }, name);
+  });
   return /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("label", {
     className: style.label
   }, props.label), /*#__PURE__*/React.createElement("select", {
