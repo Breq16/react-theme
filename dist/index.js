@@ -5,6 +5,8 @@ var reactFontawesome = require('@fortawesome/react-fontawesome');
 var freeSolidSvgIcons = require('@fortawesome/free-solid-svg-icons');
 var freeRegularSvgIcons = require('@fortawesome/free-regular-svg-icons');
 var freeBrandsSvgIcons = require('@fortawesome/free-brands-svg-icons');
+var Highlight = require('prism-react-renderer');
+var Highlight__default = _interopDefault(Highlight);
 require('normalize.css');
 
 var styles = {"badge":"_Badges-module__badge__2YqXz","badgeIcon":"_Badges-module__badgeIcon__OmwvH","badges":"_Badges-module__badges__Qjjav"};
@@ -307,8 +309,71 @@ function YouTube(props) {
   }));
 }
 
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+var styles$7 = {"code":"_Code-module__code__21E6_","codeWrapper":"_Code-module__codeWrapper__1PwDm","copyButton":"_Code-module__copyButton__1ABUI"};
+
+function CopyButton(props) {
+  return /*#__PURE__*/React.createElement("button", {
+    className: styles$7.copyButton,
+    onClick: props.onClick
+  }, "Copy");
+}
+
+function Code(props) {
+  function handleCopy(e) {
+    navigator.clipboard.writeText(props.code);
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$7.codeWrapper
+  }, /*#__PURE__*/React.createElement(Highlight__default, _extends({}, Highlight.defaultProps, {
+    code: props.code,
+    language: props.language
+  }), function (_ref) {
+    var className = _ref.className,
+        style = _ref.style,
+        tokens = _ref.tokens,
+        getLineProps = _ref.getLineProps,
+        getTokenProps = _ref.getTokenProps;
+    return /*#__PURE__*/React.createElement("pre", {
+      className: className + " " + styles$7.code,
+      style: style
+    }, tokens.map(function (line, i) {
+      return /*#__PURE__*/React.createElement("div", getLineProps({
+        line: line,
+        key: i
+      }), line.map(function (token, key) {
+        return /*#__PURE__*/React.createElement("span", getTokenProps({
+          token: token,
+          key: key
+        }));
+      }));
+    }));
+  }), /*#__PURE__*/React.createElement(CopyButton, {
+    onClick: handleCopy
+  }));
+}
+
 exports.Badge = Badge;
 exports.Badges = Badges;
+exports.Code = Code;
 exports.Container = Container;
 exports.Footer = Footer;
 exports.IconBadge = IconBadge;

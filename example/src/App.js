@@ -1,7 +1,7 @@
 import React from 'react'
 import { faKeybase } from "@fortawesome/free-brands-svg-icons"
 
-import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube } from '@breq/react-theme'
+import { Page, Badges, IconBadge, Badge, Slides, Slide, Tiles, Tile, YouTube, Code } from '@breq/react-theme'
 import '@breq/react-theme/dist/index.css'
 
 const links = {
@@ -48,6 +48,9 @@ const App = () => {
             <hr />
             <h1>YouTube</h1>
             <YouTube id="qihG6AGjkRk" />
+            <hr />
+            <h1>Code</h1>
+            <Code code={"import time"} language="python" />
         </Page>
     )
 }

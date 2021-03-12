@@ -1,0 +1,31 @@
+.code {
+    padding: 15px;
+}
+
+.codeWrapper {
+    position: relative;
+}
+
+.copyButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+
+    background: black;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 0.2em 0.5em;
+
+    display: none;
+}
+
+.code:hover + .copyButton {
+    display: block;
+}
+
+.copyButton:hover {
+    display: block;
+    background: gray;
+}

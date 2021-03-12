@@ -57,6 +57,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "normalize.css": "^8.0.1",
+    "prism-react-renderer": "^1.2.0",
     "sass": "^1.32.8"
   }
 }

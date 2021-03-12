@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight, faCalendarAlt, faHeart, faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import 'normalize.css';
 
 var styles = {"badge":"_Badges-module__badge__2YqXz","badgeIcon":"_Badges-module__badgeIcon__OmwvH","badges":"_Badges-module__badges__Qjjav"};
@@ -283,5 +284,44 @@ function YouTube(props) {
   }));
 }
 
-export { Badge, Badges, Container, Footer, IconBadge, Navbar, Page, Slide, Slides, Tile, Tiles, YouTube };
+var styles$7 = {"code":"_Code-module__code__21E6_","codeWrapper":"_Code-module__codeWrapper__1PwDm","copyButton":"_Code-module__copyButton__1ABUI"};
+
+function CopyButton(props) {
+  return /*#__PURE__*/React.createElement("button", {
+    className: styles$7.copyButton,
+    onClick: props.onClick
+  }, "Copy");
+}
+
+function Code(props) {
+  function handleCopy(e) {
+    navigator.clipboard.writeText(props.code);
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$7.codeWrapper
+  }, /*#__PURE__*/React.createElement(Highlight, Object.assign({}, defaultProps, {
+    code: props.code,
+    language: props.language
+  }), ({
+    className,
+    style,
+    tokens,
+    getLineProps,
+    getTokenProps
+  }) => /*#__PURE__*/React.createElement("pre", {
+    className: `${className} ${styles$7.code}`,
+    style: style
+  }, tokens.map((line, i) => /*#__PURE__*/React.createElement("div", getLineProps({
+    line,
+    key: i
+  }), line.map((token, key) => /*#__PURE__*/React.createElement("span", getTokenProps({
+    token,
+    key
+  }))))))), /*#__PURE__*/React.createElement(CopyButton, {
+    onClick: handleCopy
+  }));
+}
+
+export { Badge, Badges, Code, Container, Footer, IconBadge, Navbar, Page, Slide, Slides, Tile, Tiles, YouTube };
 //# sourceMappingURL=index.modern.js.map

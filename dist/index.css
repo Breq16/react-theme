@@ -350,6 +350,35 @@
 ._Navbar-module__navbarLink__1IqpR:hover {
   color: white;
 }
+._Code-module__code__21E6_ {
+  padding: 15px;
+}
+
+._Code-module__codeWrapper__1PwDm {
+  position: relative;
+}
+
+._Code-module__copyButton__1ABUI {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 0.2em 0.5em;
+  display: none;
+}
+
+._Code-module__code__21E6_:hover + ._Code-module__copyButton__1ABUI {
+  display: block;
+}
+
+._Code-module__copyButton__1ABUI:hover {
+  display: block;
+  background: gray;
+}
 @import url("https://fonts.googleapis.com/css2?family=Lato&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&amp;display=swap");
 body {
