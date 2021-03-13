@@ -18,7 +18,7 @@ const contact = [
 
 const App = () => {
 
-    const [state, setState] = React.useState("")
+    const [state, setState] = React.useState("DISABLED")
     const [droppy, setDroppy] = React.useState("hello")
     const [texty, setTexty] = React.useState("Hi\nmultiline!")
 
@@ -69,7 +69,7 @@ const App = () => {
             <h1>Forms</h1>
             <Form>
                 <FormGrid>
-                    <LabelInput label="Test Input" value={"DISABLED"} onChange={setState} disabled />
+                    <LabelInput label="Test Input" value={state} onChange={setState} disabled />
                     <LabelDropdown label="Droppy" value={droppy} options={defaultDroppy} onChange={setDroppy} />
                     <LabelTextArea label="Tinder Bio" value={texty} onChange={setTexty} />
                 </FormGrid>

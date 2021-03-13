@@ -77,18 +77,11 @@
 
 .tileOuter {
     margin: 20px;
-    flex-basis: 100%;
+    flex: 1 1 400px;
 }
 
 .tileContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-}
-
-@media (min-width: 768px) {
-    .tileOuter {
-        flex-basis: 50%;
-    }
 }

@@ -8,7 +8,6 @@ var freeRegularSvgIcons = require('@fortawesome/free-regular-svg-icons');
 var freeBrandsSvgIcons = require('@fortawesome/free-brands-svg-icons');
 var Highlight = require('prism-react-renderer');
 var Highlight__default = _interopDefault(Highlight);
-require('normalize.css');
 
 var styles = {"badge":"_2YqXz","badgeIcon":"_OmwvH","badges":"_Qjjav"};
 
@@ -221,7 +220,46 @@ function Footer(props) {
   }, contact), /*#__PURE__*/React__default.createElement("br", null), /*#__PURE__*/React__default.createElement("br", null)));
 }
 
-var styles$6 = {"navbarOuter":"_1oeE6","navbarInner":"_3YlKD","navbarToggle":"_1hZG2","navbarLinks":"_28Q7e","collapsed":"_wWJAB","navbarBrand":"_1Es7q","navbarLink":"_1IqpR","navbarIcon":"_3I3Uo"};
+var styles$6 = {"navbarOuter":"_1oeE6","navbarInner":"_3YlKD","navbarToggle":"_1hZG2","navbarLinks":"_28Q7e","collapsed":"_wWJAB","navbarBrand":"_1Es7q","navbarBrandLink":"_ByDvI","navbarLink":"_1IqpR","navbarIcon":"_3I3Uo"};
+
+var LinkIcon = function LinkIcon(props) {
+  return /*#__PURE__*/React__default.createElement(reactFontawesome.FontAwesomeIcon, {
+    className: styles$6.navbarIcon,
+    icon: freeSolidSvgIcons.faAngleDoubleRight
+  });
+};
+
+function DefaultLinks(props) {
+  var links = props.links.map(function (_ref) {
+    var name = _ref.name,
+        href = _ref.href;
+    return /*#__PURE__*/React__default.createElement("a", {
+      href: href,
+      key: name,
+      className: styles$6.navbarLink
+    }, /*#__PURE__*/React__default.createElement(LinkIcon, null), name);
+  });
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: props.className
+  }, links);
+}
+
+function CustomLinks(props) {
+  var Link = props.component;
+  var links = props.links.map(function (_ref2) {
+    var name = _ref2.name,
+        href = _ref2.href;
+    return /*#__PURE__*/React__default.createElement(Link, {
+      href: href,
+      key: name
+    }, /*#__PURE__*/React__default.createElement("a", {
+      className: styles$6.navbarLink
+    }, /*#__PURE__*/React__default.createElement(LinkIcon, null), name));
+  });
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: props.className
+  }, links);
+}
 
 function Navbar(props) {
   var _React$useState = React__default.useState(false),
@@ -232,47 +270,63 @@ function Navbar(props) {
     return setOpen(!open);
   };
 
-  var links = Object.entries(props.links).map(function (_ref) {
-    var name = _ref[0],
-        href = _ref[1];
-    return /*#__PURE__*/React__default.createElement("a", {
-      href: href,
-      key: name,
-      className: styles$6.navbarLink
-    }, /*#__PURE__*/React__default.createElement(reactFontawesome.FontAwesomeIcon, {
-      className: styles$6.navbarIcon,
-      icon: freeSolidSvgIcons.faAngleDoubleRight
-    }), name);
-  });
   var navLinksClassName = styles$6.navbarLinks + " " + (open ? "" : styles$6.collapsed);
+  var links, brand;
+
+  if (props.component) {
+    var Link = props.component;
+    links = /*#__PURE__*/React__default.createElement(CustomLinks, {
+      className: navLinksClassName,
+      component: Link,
+      links: props.links
+    });
+    brand = /*#__PURE__*/React__default.createElement(Link, {
+      href: "/"
+    }, /*#__PURE__*/React__default.createElement("a", {
+      className: styles$6.navbarBrandLink
+    }, props.brand));
+  } else {
+    links = /*#__PURE__*/React__default.createElement(DefaultLinks, {
+      className: navLinksClassName,
+      links: props.links
+    });
+    brand = /*#__PURE__*/React__default.createElement("a", {
+      href: "/",
+      className: styles$6.navbarBrandLink
+    }, props.brand);
+  }
+
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles$6.navbarOuter
   }, /*#__PURE__*/React__default.createElement(Container, null, /*#__PURE__*/React__default.createElement("nav", {
     className: styles$6.navbarInner
   }, /*#__PURE__*/React__default.createElement("h1", {
     className: styles$6.navbarBrand
-  }, /*#__PURE__*/React__default.createElement("span", null, props.brand), /*#__PURE__*/React__default.createElement("button", {
+  }, brand, /*#__PURE__*/React__default.createElement("button", {
     className: styles$6.navbarToggle,
     onClick: handleToggle
   }, /*#__PURE__*/React__default.createElement(reactFontawesome.FontAwesomeIcon, {
     icon: freeSolidSvgIcons.faHamburger
-  }))), /*#__PURE__*/React__default.createElement("div", {
-    className: navLinksClassName
-  }, links))));
+  }))), links)));
 }
 
 function Page(props) {
   var pageStyle = {
-    height: "100vh",
+    minHeight: "100%",
     display: "flex",
     flexDirection: "column"
   };
   return /*#__PURE__*/React__default.createElement("div", {
-    style: pageStyle
+    style: {
+      minHeight: "100vh"
+    }
   }, /*#__PURE__*/React__default.createElement(Navbar, {
     brand: props.brand,
+    component: props.linkComponent,
     links: props.links
-  }), /*#__PURE__*/React__default.createElement(Container, {
+  }), /*#__PURE__*/React__default.createElement("div", {
+    style: pageStyle
+  }, /*#__PURE__*/React__default.createElement(Container, {
     style: {
       flexGrow: 1
     }
@@ -281,7 +335,7 @@ function Page(props) {
     copyright: props.copyright,
     repo: props.repo,
     contact: props.contact
-  }));
+  })));
 }
 
 var styles$7 = {"heading":"_3aFSY"};
@@ -415,7 +469,8 @@ function Dropdown(props) {
     var value = _ref[0],
         name = _ref[1];
     return /*#__PURE__*/React__default.createElement("option", {
-      value: value
+      value: value,
+      key: value
     }, name);
   });
   return /*#__PURE__*/React__default.createElement("div", {
@@ -454,8 +509,9 @@ function TextArea(props) {
     name: props.name,
     onChange: function onChange(e) {
       return props.onChange(e.target.value);
-    }
-  }, props.value);
+    },
+    value: props.value
+  });
 }
 function wrapLabel(Component) {
   return function (props) {

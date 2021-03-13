@@ -2,7 +2,9 @@
 
 .navbarOuter {
     background-color: $navbar-background;
-    flex-grow: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
 }
 
 .navbarInner {
@@ -39,6 +41,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 10px;
+}
+
+.navbarBrandLink, .navbarBrandLink:hover, .navbarBrandLink:visited {
+    color: black;
+    text-decoration: none;
 }
 
 .navbarLink {
